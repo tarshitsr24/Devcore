@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "DevCore - Connect Skills, Opportunities, and Careers. Full-Stack Smart India Hackathon Platform.",
   "scripts": {
+    "postinstall": "cd backend && npm install && cd ../frontend && npm install",
     "build": "cd frontend && npm run build",
     "start": "cd backend && npm start",
     "start:backend": "cd backend && npm start",

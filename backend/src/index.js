@@ -48,10 +48,9 @@ app.get('/api/health', (req, res) => {
 app.use(express.static(path.join(__dirname, '../../frontend/dist')));
 
 // Catch-all route to serve index.html for React client-side routing
-app.get('*', (req, res) => {
+app.use((req, res) => {
   res.sendFile(path.join(__dirname, '../../frontend/dist/index.html'));
 });
-
 if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_URL.includes('your-project')) {
   throw new Error('SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY must be configured in backend/.env');
 }

@@ -1,0 +1,227 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', 'Geist', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #F4F4F6;
+    color: #09090B;
+    letter-spacing: -0.011em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #000000;
+    font-weight: 700;
+    letter-spacing: -0.028em;
+  }
+}
+
+/* Strict 4px-6px Border Radius Enforcements for Minimalist SaaS Geometry */
+.glass-card,
+[class*="rounded-3xl"],
+[class*="rounded-2xl"],
+[class*="rounded-xl"] {
+  border-radius: 6px !important;
+}
+
+button,
+input,
+select,
+textarea,
+[class*="rounded-lg"],
+[class*="rounded-md"] {
+  border-radius: 4px !important;
+}
+
+/* Transform badge and tag pill shapes into crisp 4px rectangular badges */
+span[class*="rounded-full"],
+div[class*="rounded-full"]:not([class*="w-9"]):not([class*="w-12"]):not([class*="w-14"]):not([class*="w-20"]):not([class*="w-24"]):not([class*="w-2"]):not([class*="w-1.5"]):not([class*="w-3"]):not([class*="w-4"]) {
+  border-radius: 4px !important;
+}
+
+/* Minimalist Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F4F4F6;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4D4D8;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A1A1AA;
+}
+
+/* Clean Structured Cards (Vercel/Linear Style) */
+.glass-card {
+  background-color: #FFFFFF !important;
+  border: 1px solid #E4E4E7 !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.02) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid #E4E4E7 !important;
+}
+
+/* High Contrast Inputs & Selects */
+input, textarea, select {
+  background-color: #FFFFFF !important;
+  border: 1px solid #E4E4E7 !important;
+  color: #09090B !important;
+  border-radius: 4px !important;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #A1A1AA !important;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #09090B !important;
+  box-shadow: 0 0 0 1px #09090B !important;
+  outline: none !important;
+}
+
+/* Minimalist High-Contrast Action Buttons (Solid Black CTA) */
+[class*="from-brand-"][class*="to-indigo-"],
+[class*="from-brand-"][class*="via-indigo-"] {
+  background-image: none !important;
+  background-color: #09090B !important;
+  color: #FFFFFF !important;
+  border: 1px solid #09090B !important;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+  border-radius: 4px !important;
+}
+
+[class*="hover:from-brand-"]:hover,
+[class*="hover:to-indigo-"]:hover {
+  background-image: none !important;
+  background-color: #27272A !important;
+  border-color: #27272A !important;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Secondary & Outlined Utility Buttons */
+[class*="bg-slate-800"] {
+  background-color: #F4F4F5 !important;
+  border-color: #E4E4E7 !important;
+  color: #18181B !important;
+}
+
+[class*="hover:bg-slate-800"]:hover,
+[class*="hover:bg-slate-700"]:hover {
+  background-color: #E4E4E7 !important;
+}
+
+[class*="bg-slate-900"] {
+  background-color: #FFFFFF !important;
+  border-color: #E4E4E7 !important;
+}
+
+[class*="bg-slate-950"] {
+  background-color: #F4F4F6 !important;
+  border-color: #E4E4E7 !important;
+}
+
+/* Minimalist Tags and Badges */
+[class*="bg-brand-500/10"],
+[class*="bg-brand-600/20"],
+[class*="bg-cyan-500/10"],
+[class*="bg-sky-500/10"],
+[class*="bg-indigo-500/10"],
+[class*="bg-amber-500/10"] {
+  background-color: #F4F4F5 !important;
+  border-color: #E4E4E7 !important;
+  color: #18181B !important;
+}
+
+[class*="bg-emerald-500/10"],
+[class*="bg-emerald-400/10"] {
+  background-color: #ECFDF5 !important;
+  border-color: #A7F3D0 !important;
+  color: #065F46 !important;
+}
+
+[class*="bg-rose-500/10"] {
+  background-color: #FEF2F2 !important;
+  border-color: #FECACA !important;
+  color: #991B1B !important;
+}
+
+/* =========================================================================
+   Universal High-Contrast Text Rules for Light Minimalist Theme
+   ========================================================================= */
+
+/* Default headings, titles and text inside cards and body must always be deep legible dark */
+h1, h2, h3, h4, h5, h6 {
+  color: #09090B;
+}
+
+.glass-card h1, .glass-card h2, .glass-card h3, .glass-card h4, .glass-card h5, .glass-card h6,
+.glass-card [class*="text-white"],
+.glass-card [class*="text-slate-100"],
+.glass-card [class*="text-slate-200"] {
+  color: #09090B !important;
+}
+
+.glass-card [class*="text-slate-300"] {
+  color: #27272A !important;
+}
+
+.glass-card [class*="text-slate-400"],
+.glass-card [class*="text-slate-500"] {
+  color: #71717A !important;
+}
+
+/* Ensure headings/text outside cards on the main #F4F4F6 canvas are dark */
+main h1, main h2, main h3, main h4 {
+  color: #09090B;
+}
+
+/* Explicitly protect white text ONLY on solid dark buttons / badges / featured containers */
+button[class*="bg-[#09090B]"],
+button[class*="bg-black"],
+button[class*="bg-brand-600"],
+button[class*="bg-brand-500"],
+button[class*="bg-indigo-600"],
+button[class*="bg-emerald-600"],
+button[class*="bg-rose-600"],
+a[class*="bg-[#09090B]"],
+a[class*="bg-black"],
+a[class*="bg-brand-600"],
+[class*="bg-[#09090B]"] > h1,
+[class*="bg-[#09090B]"] > h2,
+[class*="bg-[#09090B]"] > h3,
+[class*="bg-[#09090B]"] [class*="text-white"],
+[class*="bg-black"] [class*="text-white"],
+[class*="bg-[#18181B]"] [class*="text-white"] {
+  color: #FFFFFF !important;
+}
+
+/* Mobile drawer navigation background & text */
+.glass-nav [class*="bg-slate-900"],
+.glass-nav [class*="bg-slate-800"] {
+  background-color: #FFFFFF !important;
+  border-color: #E4E4E7 !important;
+  color: #09090B !important;
+}
+
+.glass-nav [class*="text-slate-100"],
+.glass-nav [class*="text-slate-200"],
+.glass-nav [class*="text-slate-300"] {
+  color: #09090B !important;
+}
+
+
+
